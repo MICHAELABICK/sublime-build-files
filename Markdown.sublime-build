@@ -2,9 +2,13 @@
   // When Tools|Build System is set to automatic, Sublime will use "selector"
   // to choose the appropriate sublime-build file
   "selector": ["text.html.markdown", "text.markdown"],
+  "working_dir": "$folder",
   // This is the command line command that will be run. First Pandoc will be
   // used to render the source file into a pdf. Then we will open the file
   // in Skim
-  "shell_cmd": ["pandoc -o \"$file.pdf\" \"$file\" && open -a Skim \"$file.pdf\""],
+  "shell_cmd": "pandoc -S --tab-stop=2 -o \"$file_name.pdf\" \"$file\" && open -a Skim \"$file_name.pdf\"",
+  // Use the following command to put the PDF in the "PDFs" folder inside
+  // the working directory
+  // "shell_cmd": "pandoc -S --tab-stop=2 -o \"PDFs/$file_name.pdf\" \"$file\" && open -a Skim \"PDFs/$file_name.pdf\"",
   "path": "/usr/texbin:$PATH"
 }
