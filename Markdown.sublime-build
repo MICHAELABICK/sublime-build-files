@@ -1,0 +1,9 @@
+{
+  // When Tools|Build System is set to automatic, Sublime will use "selector"
+  // to choose the appropriate sublime-build file
+  "selector": "source.html.md",
+  // This is the command line command that will be run. First Pandoc will be
+  // used to render the source file into a pdf. Then we will open the file
+  // in Skim
+  "shell_cmd": ["pandoc -o \"$file.pdf\" \"$file\" && open -a Skim \"$file.pdf\""],
+}
